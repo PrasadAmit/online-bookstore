@@ -1,0 +1,10 @@
+body {
+    background: #eee;
+}
+.container{
+    padding:10%;
+}
+.lead{
+    background:#fff;
+    padding:5%;
+}
