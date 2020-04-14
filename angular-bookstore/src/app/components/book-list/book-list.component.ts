@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../../common/book';
 import { BookService } from '../../services/book.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router'; //, Router
 
 @Component({
   selector: 'app-book-list',
-//  templateUrl: './book-list.component.html',
   templateUrl: './book-grid.component.html',
   styleUrls: ['./book-list.component.css']
 })
@@ -17,7 +16,7 @@ export class BookListComponent implements OnInit {
   constructor(private _bookService: BookService,
               private _activatedRoute: ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit() { 
     this._activatedRoute.paramMap.subscribe(()=>{
       this.listBooks();
     })
@@ -26,7 +25,7 @@ export class BookListComponent implements OnInit {
   listBooks() {
       const hasCategoryId: boolean=this._activatedRoute.snapshot.paramMap.has('id');
         if(hasCategoryId){
-         this.currentCategoryId = +this._activatedRoute.snapshot.paramMap.get('id');
+         this.currentCategoryId = +this._activatedRoute.snapshot.paramMap .get('id');
         }else{
           this.currentCategoryId=1;
         }
