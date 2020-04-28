@@ -33,7 +33,6 @@ export class BookListComponent implements OnInit {
       //display books based on categories
       this.handleListBooks();
     }
-
   }
 
   handleListBooks() {

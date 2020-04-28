@@ -13,6 +13,7 @@ public class RepositoryConfig implements RepositoryRestConfigurer{
 
 	@Autowired
 	private EntityManager entityManager;
+	
 	@Override
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
 		config.exposeIdsFor(entityManager.getMetamodel().getEntities().stream()
